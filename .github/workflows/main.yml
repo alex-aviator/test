@@ -1,0 +1,23 @@
+name: main
+on:
+  # Trigger for any updates to main
+  pull_request:
+    branches-ignore:
+      - 'mq-bot-**'
+      - 'mq-tmp-**'
+
+jobs:
+  main:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: sleep
+        shell: bash
+        run: |
+          sleep 5
+  test:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: sleep
+        shell: bash
+        run: |
+          sleep 5

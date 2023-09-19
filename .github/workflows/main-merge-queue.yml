@@ -1,0 +1,23 @@
+name: main-merge-queue
+on:
+#  pull_request:
+  push:
+    branches:
+      - 'mq-bot*'
+  workflow_dispatch:
+    inputs: {}
+jobs:
+  main:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: merge-sleep
+        shell: bash
+        run: |
+          sleep 60
+  test:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: merge-sleep
+        shell: bash
+        run: |
+          sleep 10
