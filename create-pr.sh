@@ -1,8 +1,8 @@
 #!/bin/sh
 
 git checkout main
-git checkout -b "$PREFIX-$0"
-echo "Change for $PREFIX $0" > "$PREFIX-$0.txt"
+git checkout -b "$PREFIX-$1"
+echo "Change for $PREFIX $1" > "$PREFIX-$1.txt"
 git add .
-git commit -m "Change for $PREFIX $0"
+git commit -m "Change for $PREFIX $1"
 git push
