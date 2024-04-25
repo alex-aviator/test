@@ -8,13 +8,13 @@ on:
   workflow_dispatch:
     inputs:
       deployment_id:
-      description: "Database ID of deployment"
-      required: false
-      type: string
-    head_ref:
-      description: "Commit SHA, branch name, or tag of the HEAD to be deployed"
-      required: true
-      type: string
+        description: "Database ID of deployment"
+        required: false
+        type: string
+      head_ref:
+        description: "Commit SHA, branch name, or tag of the HEAD to be deployed"
+        required: true
+        type: string
 
 env:
   CALVER_VERSION: testing
