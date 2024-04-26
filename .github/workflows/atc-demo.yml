@@ -39,8 +39,8 @@ jobs:
       - name: Print the inputs
         run: |
           echo "Inputs:"
-          echo "deployment_id=${{inputs.deployment_id}}"
-          echo "head_sha=${{inputs.head_sha}}"
+          echo "deployment_id=${{ inputs.deployment_id }}"
+          echo "head_sha=${{ inputs.head_ref }}"
           
       - name: Create new GitTag via Aviator API
         uses: fjogeleit/http-request-action@v1
