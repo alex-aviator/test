@@ -10,7 +10,7 @@ on:
       deployment_id:
         description: "Database ID of deployment"
         required: false
-        type: number
+        type: string
       head_ref:
         description: "Commit SHA, branch name, or tag of the HEAD to be deployed"
         required: true
@@ -48,4 +48,4 @@ jobs:
           url: '${{ vars.ATC_DEMO_API_HOST }}/api/v1/sync-github-action'
           method: 'POST'
           bearerToken: ${{ secrets.ATC_DEMO_AVIATOR_API_TOKEN }}
-          data: '{"deployment_id": ${{ inputs.deployment_id }}, "workflow_run_id": ${{ github.run_id }}}'
+          data: '{"deployment_id": "${{ inputs.deployment_id }}", "workflow_run_id": "${{ github.run_id }}"}'
