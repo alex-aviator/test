@@ -11,8 +11,8 @@ on:
         description: "Database ID of deployment"
         required: false
         type: string
-      head_ref:
-        description: "Commit SHA, branch name, or tag of the HEAD to be deployed"
+      version:
+        description: "Version string to be deployed"
         required: true
         type: string
 
