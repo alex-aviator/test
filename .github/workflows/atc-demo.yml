@@ -45,7 +45,7 @@ jobs:
       - name: Sync IDs via Aviator API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: '${{ vars.ATC_DEMO_API_HOST }}/api/v1/sync-deployment-github-action'
+          url: '${{ vars.ATC_DEMO_API_HOST }}/api/v1/sync-deploy-github-action'
           method: 'POST'
           bearerToken: ${{ secrets.ATC_DEMO_AVIATOR_API_TOKEN }}
           data: '{"deployment_id": "${{ inputs.deployment_id }}", "workflow_run_id": "${{ github.run_id }}"}'
