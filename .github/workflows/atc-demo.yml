@@ -49,3 +49,8 @@ jobs:
           method: 'POST'
           bearerToken: ${{ secrets.ATC_DEMO_AVIATOR_API_TOKEN }}
           data: '{"deployment_id": "${{ inputs.deployment_id }}", "workflow_run_id": "${{ github.run_id }}"}'
+
+      - name: Wait until canceled
+        shell: bash
+        run: |
+          sleep 300
