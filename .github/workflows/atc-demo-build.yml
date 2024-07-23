@@ -11,7 +11,7 @@ on:
         description: "Database ID of release cut"
         required: false
         type: string
-      head_ref:
+      commit_sha:
         description: "Commit SHA, branch name, or tag of the HEAD to be built"
         required: false
         type: string
@@ -29,6 +29,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Print the ref
+        run: |
+          echo "Current HEAD: $(git rev-parse HEAD)"
+        
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
         with:
@@ -41,7 +45,8 @@ jobs:
         run: |
           echo "Inputs:"
           echo "deployment_id=${{ inputs.release_cut_id }}"
-          echo "head_sha=${{ inputs.head_ref }}"
+          echo "commit_sha=${{ inputs.commit_sha }}"
+          echo "version=${{ inputs.version }}"
           
       - name: Sync IDs via Aviator API
         uses: fjogeleit/http-request-action@v1
